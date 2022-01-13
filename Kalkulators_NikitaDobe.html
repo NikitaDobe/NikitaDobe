@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+  var op; 
+  function func() {
+    var result;
+    var a = Number(document.getElementById("a").value);
+    var b = Number(document.getElementById("b").value);
+    switch (op) {
+      case '+':
+        result = a + b;
+        break;
+      case '-':
+        result = a - b;
+        break;
+      case '*':
+        result = a * b;
+        break;
+      case '/':
+        if (b) {
+          result = a / b;
+        } else {
+          result = '';
+        }
+        break;
+      default:
+        result = '';
+    }
+
+    document.getElementById("result").innerHTML = result;
+  }
+</script>
+<input id="a" />
+<div id="operator_btns">
+  <button id="plus" class="operator" onclick="op='+'">+</button>
+  <button id="minus" class="operator" onclick="op='-'">-</button>
+  <button id="times" class="operator" onclick="op='*'">x</button>
+  <button id="divide" class="operator" onclick="op='/'">:</button>
+</div>
+
+<input id="b" />
+
+<button onclick="func()">Atbilde</button>
+
+<p id="result"></p>
+
+</html>
+</head>
